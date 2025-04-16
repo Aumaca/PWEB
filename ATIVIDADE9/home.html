@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Testando Funções</title>
+	</head>
+	<body>
+		<script type="module">
+			import {
+				maiorDeTres,
+				ordenarCrescente,
+				ehPalindromo,
+				tipoTriangulo,
+			} from "./funcoes.js"
+
+			console.log("Maior de (4, 8, 2):", maiorDeTres(4, 8, 2))
+			console.log("Ordenação (4, 8, 2):", ordenarCrescente(4, 8, 2))
+			console.log("É palíndromo 'Ovo'?:", ehPalindromo("Ovo"))
+			console.log("Triângulo (3, 4, 5):", tipoTriangulo(3, 4, 5))
+		</script>
+	</body>
+</html>
