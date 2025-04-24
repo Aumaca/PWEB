@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios de Objetos</title>
+</head>
+
+<body>
+    <h2>Escolha o exercício:</h2>
+    <button onclick="carregarScript('retangulo.js')">Executar Retângulo</button>
+    <button onclick="carregarScript('conta.js')">Executar Conta</button>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        function carregarScript(arquivo) {
+            const scriptsAntigos = document.querySelectorAll("script[data-dinamico]");
+            scriptsAntigos.forEach(s => s.remove());
+
+            document.getElementById("resultado").innerHTML = "";
+
+            const script = document.createElement("script");
+            script.src = arquivo;
+            script.setAttribute("data-dinamico", "true");
+            document.body.appendChild(script);
+        }
+
+        document.write = (function (origWrite) {
+            return function (conteudo) {
+                const container = document.getElementById("resultado");
+                if (container) {
+                    container.innerHTML += conteudo;
+                } else {
+                    origWrite(conteudo);
+                }
+            };
+        })(document.write);
+    </script>
+</body>
+
+</html>
