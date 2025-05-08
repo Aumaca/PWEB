@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário com Validação</title>
+</head>
+
+<body>
+    <form name="meuFormulario" onsubmit="return validar(event)">
+        <label>Nome:<br>
+            <input type="text" name="nome">
+        </label><br><br>
+
+        <label>Email:<br>
+            <input type="email" name="email" required>
+        </label><br><br>
+
+        <label>Comentário:<br>
+            <textarea name="comentario"></textarea>
+        </label><br><br>
+
+        <p>Você está aqui pela primeira vez?</p>
+        <label><input type="radio" name="pesquisa" value="sim"> Sim</label>
+        <label><input type="radio" name="pesquisa" value="nao"> Não</label><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script src="valida.js"></script>
+</body>
+
+</html>
