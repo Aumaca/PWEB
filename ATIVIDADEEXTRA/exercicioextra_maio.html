@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade Extra – Cálculo de Média</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .resultados {
+      margin-top: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .aluno {
+      background: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .media-geral {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de Alunos</h1>
+  <form id="form">
+    <input type="text" id="nome" placeholder="Nome Completo" required>
+    <input type="text" id="ra" placeholder="RA (5 dígitos)" required>
+    <input type="number" id="nota1" placeholder="Nota 1 (0 a 10)" required>
+    <input type="number" id="nota2" placeholder="Nota 2 (0 a 10)" required>
+    <input type="number" id="nota3" placeholder="Nota 3 (0 a 10)" required>
+    <button type="submit">Adicionar Aluno</button>
+  </form>
+
+  <div class="resultados" id="resultados"></div>
+  <div class="media-geral" id="mediaGeral"></div>
+
+  <script>
+    const form = document.getElementById('form');
+    const resultados = document.getElementById('resultados');
+    const mediaGeral = document.getElementById('mediaGeral');
+
+    function createCounter() {
+      let count = 0;
+      return function () {
+        return count++;
+      };
+    }
+
+    const contador = createCounter();
+    const alunos = [];
+    let somaDasMedias = 0;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const ra = document.getElementById('ra').value.trim();
+      const nota1 = parseFloat(document.getElementById('nota1').value);
+      const nota2 = parseFloat(document.getElementById('nota2').value);
+      const nota3 = parseFloat(document.getElementById('nota3').value);
+
+      if (!/^\D+\s\D+/.test(nome)) {
+        alert('Digite nome e sobrenome.');
+        return;
+      }
+
+      if (!/^\d{5}$/.test(ra)) {
+        alert('RA deve conter 5 dígitos numéricos.');
+        return;
+      }
+
+      if ([nota1, nota2, nota3].some(n => isNaN(n) || n < 0 || n > 10)) {
+        alert('As notas devem estar entre 0 e 10.');
+        return;
+      }
+
+      const media = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+      alunos.push({ nome, ra, media: parseFloat(media) });
+      somaDasMedias += parseFloat(media);
+
+      const alunoDiv = document.createElement('div');
+      alunoDiv.className = 'aluno';
+      alunoDiv.innerText = `Nome: ${nome} | RA: ${ra} | Média: ${media}`;
+      resultados.appendChild(alunoDiv);
+
+      form.reset();
+
+      if (contador() === 9) {
+        const mediaFinal = (somaDasMedias / 10).toFixed(2);
+        mediaGeral.innerText = `Média Geral dos Alunos: ${mediaFinal}`;
+        form.querySelector('button').disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>
