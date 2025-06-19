@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^1.10.0",
+    "body-parser": "^2.2.0",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mssql": "^11.0.1",
+    "pg": "^8.16.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "name": "sitefatec",
+  "version": "1.0.0",
+  "description": "sitefatec",
+  "main": "callback1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
