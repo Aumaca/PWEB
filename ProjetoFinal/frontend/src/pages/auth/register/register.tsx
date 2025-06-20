@@ -53,7 +53,7 @@ const Register = () => {
 	useEffect(() => {
 		const fetchCountries = async () => {
 			try {
-				const response = await fetch("https://restcountries.com/v3.1/all")
+				const response = await fetch("https://restcountries.com/v3.1/all?fields=name")
 				const data = await response.json()
 				const countryNames = data.map((country: Country) => country.name.common)
 				const sortedCountryNames = countryNames.sort((a: string, b: string) =>
@@ -65,7 +65,7 @@ const Register = () => {
 					isOpen: true,
 					backgroundColor: "#D2042D",
 					title: "Error",
-					children: "An error occurred when connecting to the server",
+					children: "An error occurred when connecting to the server to fetch countries",
 				})
 			}
 		}
