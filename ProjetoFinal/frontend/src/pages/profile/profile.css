@@ -1,0 +1,196 @@
+.profile .profile_container {
+	padding: 1rem;
+	background-color: var(--body-secondary);
+	text-align: center;
+}
+
+.profile .user_container {
+	display: flex;
+	justify-content: center;
+	background-color: var(--body-terciary);
+	width: 100%;
+}
+
+.profile .user {
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	padding: 2rem;
+	max-width: 450px;
+	width: 450px;
+}
+
+.profile .user .picture {
+	color: black;
+	display: flex;
+	gap: 1rem;
+}
+
+.profile .user .username {
+	height: 100%;
+	width: 100%;
+	padding: 1rem 0 0 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.profile .user .username a {
+	width: fit-content;
+}
+
+.profile .user .username button {
+	padding: 1rem;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+.profile .anime_stats_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile .anime_stats {
+	max-width: 450px;
+	min-width: 350px;
+	width: 100%;
+}
+
+.profile .anime_stats .anime_stats_bar {
+	margin: 2rem 0rem;
+	width: 100%;
+	height: 30px;
+	display: flex;
+}
+
+.profile .anime_stats .anime_stats_bar div {
+	height: 30px;
+	width: 100%;
+}
+
+.profile .anime_stats .watching {
+	background-color: var(--watching);
+}
+
+.profile .anime_stats .completed {
+	background-color: var(--completed);
+}
+
+.profile .anime_stats .onHold {
+	background-color: var(--onHold);
+}
+
+.profile .anime_stats .dropped {
+	background-color: var(--dropped);
+}
+
+.profile .anime_stats .planToWatch {
+	background-color: var(--planToWatch);
+}
+
+.profile .title {
+	padding: 3rem 0 1rem 1rem;
+	margin-bottom: 2rem;
+	border-bottom: 2px solid white;
+}
+
+.profile .anime_stats .stats_container {
+	font-size: 1.5rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+}
+
+.profile .anime_stats .stats_container div {
+	width: 100%;
+}
+
+.profile .anime_stats .stats_container div ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.profile .anime_stats .stats_container div ul li {
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile .anime_stats .stats_container div ul li a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+	color: white;
+}
+
+.profile .anime_stats .stats_container div ul li a div {
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+.profile .delete {
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding: 5rem 0rem 0 0;
+}
+
+.profile .delete button {
+	padding: 1rem;
+	border-radius: 10px;
+	border: 2px solid red;
+	color: white;
+	font-weight: 700;
+	background-color: transparent;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	transition: 0.2s ease-in-out;
+}
+
+.profile .delete button:hover {
+	background-color: black;
+	cursor: pointer;
+}
+
+.profile .container {
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.profile .swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile .container .slide a {
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	height: 260px;
+}
+
+.profile .container .slide a img {
+	object-fit: cover;
+	width: 150px;
+	border-radius: 8px 8px 0px 0px;
+	position: relative;
+}
+
+.profile .container .slide a .content {
+	width: 150px;
+	border-radius: 0px 0px 8px 8px;
+	padding: 1rem 0.5rem;
+	background-color: white;
+	color: black;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
